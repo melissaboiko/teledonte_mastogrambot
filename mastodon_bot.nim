@@ -171,7 +171,7 @@ proc mastobot_get_oauthtoken(b: Mastobot, authcode: string): Mastodon_oauth_toke
   return to(j, Mastodon_oauth_token)
 
 
-proc newMastobot(): Mastobot =
+proc newMastobot*(): Mastobot =
   let (user, instance) = get_usertuple(read_username())
   let apiurl: string = &"https://{instance}/{API_PATH}"
 
