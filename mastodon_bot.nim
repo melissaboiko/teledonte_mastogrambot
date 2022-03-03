@@ -3,7 +3,7 @@ import system/io, std/streams, std/json, std/marshal
 import os, std/terminal, logging
 import std/net, std/uri, std/httpclient
 
-import telemasto_config
+import teledonte_config
 
 const API_PATH = "api/v1"
 

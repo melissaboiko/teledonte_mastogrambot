@@ -1,5 +1,5 @@
 import logging
-import telemasto_config
+import teledonte_config
 
 proc setup_logger*() =
   var L = newConsoleLogger(

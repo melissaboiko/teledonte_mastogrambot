@@ -2,7 +2,7 @@ import std/strutils, std/strformat, std/json, std/os, std/streams, system/io
 import logging, asyncdispatch, options
 import telebot
 
-import telemasto_config
+import teledonte_config
 import log
 import mastodon_bot
 
