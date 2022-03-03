@@ -2,8 +2,10 @@
     "log_level": "lvlDebug",
     "paths": {
         "telegram_api_key": "telegram_api_key.txt",
-        "mastodon_token": "mastodon_token.json",
-        "teletootsdb": "teletoots.json"
+        "mastodon_user": "mastodon_user.txt",
+        "mastodon_app_token": "mastodon_app_token.json",
+        "mastodon_oauth_token": "mastodon_oauth_token.json",
+        "teletootsdb": "teletoots.json",
     },
     "poll_interval": 300
 }

@@ -1,12 +1,11 @@
-import telebot, asyncdispatch, logging, options, std/strutils, std/strformat, std/json, std/os, system/io, std/streams
+import std/strutils, std/strformat, std/json, std/os, std/streams, system/io
+import logging, asyncdispatch, options
+import telebot
+
 import telemasto_config
+import log
 import telegram_bot
-
-# echo(config.paths.telegram_api_key)
-echo(config.poll_interval)
-
-var L = newConsoleLogger(fmtStr="$levelname, [$time] ", levelThreshold=config.log_level)
-addHandler(L)
+import mastodon_bot
 
 type TeledonteBot = ref object
   telebot: Telebot
@@ -31,8 +30,6 @@ proc init_teletootsdb(this: TeledonteBot) =
     this.teletootsdb = %* {"telegrams": {}}
     this.save_teletootsdb()
 
-
-# proc init_mastobot(
 
 
 proc toot(this: TeledonteBot, req: Message) =
@@ -117,7 +114,8 @@ proc newTeledonteBot(t_api_key_path=config.paths.telegram_api_key,
   let f = open(t_api_key_path)
   let t_api_key = strip(readAll(f))
   let telebot = newTeleBot(t_apikey)
-  # mastobot =
+  let mastobot = newMastobot()
+
   result=TeledonteBot(
     telebot: telebot,
     teletoots_path: teletoots_path,
