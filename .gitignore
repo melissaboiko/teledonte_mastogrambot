@@ -4,3 +4,5 @@ telegram_api_key.txt
 mastodon_app_token.json
 mastodon_oauth_token.json
 mastodon_user.txt
+etc/
+var/

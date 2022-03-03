@@ -1,11 +1,11 @@
 {
     "log_level": "lvlDebug",
     "paths": {
-        "telegram_api_key": "telegram_api_key.txt",
-        "mastodon_user": "mastodon_user.txt",
-        "mastodon_app_token": "mastodon_app_token.json",
-        "mastodon_oauth_token": "mastodon_oauth_token.json",
-        "teletootsdb": "teletoots.json",
+        "telegram_api_key": "etc/telegram_api_key.txt",
+        "mastodon_user": "etc/mastodon_user.txt",
+        "mastodon_app_token": "var/mastodon_app_token.json",
+        "mastodon_oauth_token": "var/mastodon_oauth_token.json",
+        "teletootsdb": "var/teletoots.json"
     },
     "poll_interval": 300
 }
