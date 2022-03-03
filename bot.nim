@@ -4,12 +4,11 @@ import telebot
 
 import telemasto_config
 import log
-import telegram_bot
 import mastodon_bot
 
 type TeledonteBot = ref object
   telebot: Telebot
-  # mastobot:
+  mastobot: Mastobot
   teletootsdb: JsonNode
   teletoots_path: string
 
@@ -118,10 +117,12 @@ proc newTeledonteBot(t_api_key_path=config.paths.telegram_api_key,
 
   result=TeledonteBot(
     telebot: telebot,
+    mastobot: mastobot,
     teletoots_path: teletoots_path,
   )
   result.init_teletootsdb()
   result.install_telegramUpdateHandler()
 
+setup_logger()
 let tdBot = newTeledonteBot()
 tdBot.poll()

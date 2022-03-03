@@ -4,7 +4,6 @@ import os, std/terminal, logging
 import std/net, std/uri, std/httpclient
 
 import telemasto_config
-import log
 
 const API_PATH = "api/v1"
 
@@ -25,7 +24,7 @@ type Mastodon_oauth_token = object
     scope*: string # space-separated; we don't care
     created_at*: int # timestamp; we don't care
 
-type Mastobot = object
+type Mastobot* = object
   user*: string
   instance*: string
   apiurl*: string
